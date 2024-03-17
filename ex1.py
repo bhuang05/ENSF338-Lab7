@@ -70,6 +70,16 @@ class BinarySearchTree:
             else:
                 current = current.right
         return None
+    
+    def find_max_balance(self, node):
+        if node is None:
+            return 0
+
+        left_balance = self.find_max_balance(node.left)
+        right_balance = self.find_max_balance(node.right)
+        current_balance = abs(self.getBalance(node))
+
+        return max(left_balance, right_balance, current_balance)
 
 
 intlist = [i for i in range(0,1000)]
@@ -86,11 +96,11 @@ for num in intlist:
 def measuresearch(intlist, bst):
     max_balance = 0
     for num in intlist:
-        bst.search(num)
+        found = bst.search(num)
         balance = abs(bst.getBalance(bst.root))
         if balance > max_balance:
             max_balance = balance
-    largestbalancevals.append(max_balance)
+    largestbalancevals.append(int(max_balance))
         
 
 for i in range(1000):
@@ -101,6 +111,7 @@ for i in range(1000):
     timetaken = timeit.timeit(lambda: measuresearch(intlist, bst), number = 1)
     avgtime = timetaken / 1000
     times.append(avgtime)
+    
     
 
 plt.scatter(largestbalancevals, times)
