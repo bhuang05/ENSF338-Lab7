@@ -4,10 +4,10 @@ class Node:
         self.parent = parent
         self.left = None
         self.right = None
-        self.height = 1  # Initialize height to 1
+        self.height = 1  
         self.balance = 0
         
-
+#Class created with help from ChatGPT
 class BinarySearchTree:
     def __init__(self):
         self.root = None
