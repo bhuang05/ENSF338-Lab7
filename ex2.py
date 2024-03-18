@@ -56,12 +56,12 @@ class BinarySearchTree:
         else:
             if pivot_balance >= 1:
                 if node_inserted.data < self.pivot.data:
-                    print("Case #2: A pivot exists, and a node was added tothe shorter subtree")
+                    print("Case #2: A pivot exists, and a node was added to the shorter subtree")
                 elif node_inserted.data > self.pivot.data:
                     print("Case 3 not supported")
             elif pivot_balance <= -1:
                 if node_inserted.data > self.pivot.data:
-                    print("Case #2: A pivot exists, and a node was added tothe shorter subtree")
+                    print("Case #2: A pivot exists, and a node was added to the shorter subtree")
                 elif node_inserted.data < self.pivot.data:
                     print("Case 3 not supported")
 
@@ -101,15 +101,11 @@ class BinarySearchTree:
         return None
 
 # Test cases
-bst1 = BinarySearchTree()
-bst1.insert(10)
-bst1.insert(12)
-bst1.insert(13)
-bst1.insert(9)
-bst1.insert(8)
+bst = BinarySearchTree()
+bst.insert(10) #Root Node 
+bst.insert(11) #Test Case 1: Case 1 - No pivot
+bst.insert(12) #Test Case 2: Case 3 - Longer Subtree 
+bst.insert(9)  #Test Case 3: Case 2 - Shorter Subtree
+bst.insert(8)  #Test Case 4: Case 2 - Shorter Subtree 
 
-print("Case 2")
-bst2 = BinarySearchTree()
-bst2.insert(10)
-bst2.insert(5)
-bst2.insert(3)
+
