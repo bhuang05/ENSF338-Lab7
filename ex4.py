@@ -212,8 +212,8 @@ print()
 print("AVL 4: \n")
 avl4 = AVLTree()
 avl4.insert(11)   # Root Node
-avl4.insert(10)    # Test Case 1: No pivot
-avl4.insert(9)   # Test Case 2: No pivot
+avl4.insert(9)    # Test Case 1: No pivot
+avl4.insert(10)   # Test Case 2: No pivot
 avl4.insert(8)   # Test Case 3b: Adding a node to an inner subtree causing an RL rotation
 
 print()
